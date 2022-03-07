@@ -45,9 +45,10 @@ function getRandomHidingSpot() {
     const index = Math.floor(Math.random() * hidingPlaces.length);
 
     // use the random index above and the array of hidingPlaces to get a random hiding place string
-    randomHidingPlace = hidingPlaces[index]
+    const randomHidingPlace = `${hidingPlaces[index]}`;
+    console.log(randomHidingPlace);
     // return that random hiding place string
-    return randomHidingPlace
+    //return randomHidingPlace;
 }
 
 function handleGuess(userGuess, correctSpot) {
