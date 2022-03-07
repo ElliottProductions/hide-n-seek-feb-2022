@@ -17,7 +17,7 @@ let totalGuesses = 0;
 
 shedButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
-    //let correctSpot = 
+ 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess('shed', getRandomHidingSpot());
 });
@@ -26,12 +26,14 @@ treeButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    handleGuess('tree', getRandomHidingSpot());
 });
 
 boulderButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+    handleGuess('boulder', getRandomHidingSpot());
 });
 
 
@@ -63,12 +65,16 @@ function handleGuess(userGuess, correctSpot) {
     totalGuesses++;
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
     const correctHidingSpot = document.getElementById(`${correctSpot}-container`);
-    console.log(correctHidingSpot);
+    //console.log(correctHidingSpot);
     // then add the .face css class to that element so that the face shows up
     correctHidingSpot.classList.add('face');
     // then if the user guess is correct, increment the correct guesses
     if(correctSpot === userGuess){
-        console.log('yipee')
+        correctGuesses++
     }
     // update the DOM to show the new value of wins, losses and total guesses to the user
+    totalEl.textContent = totalGuesses;
+    winsEl.textContent = correctGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
+
 }
