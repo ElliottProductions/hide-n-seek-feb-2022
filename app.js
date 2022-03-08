@@ -11,11 +11,21 @@ const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
 
+const treeGuesses = document.getElementById('tree-guesses');
+const boulderGuesses = document.getElementById('boulder-guesses');
+const shedGuesses = document.getElementById('shed-guesses');
+
 
 let correctGuesses = 0;
 let totalGuesses = 0;
+let treeG = 0;
+let boulderG = 0;
+let shedG = 0;
+
 
 shedButton.addEventListener('click', () => {
+
+    shedG += 1
     // get a random item to call the 'correct spot'
  
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -23,6 +33,8 @@ shedButton.addEventListener('click', () => {
 });
 
 treeButton.addEventListener('click', () => {
+
+    treeG += 1
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -30,6 +42,8 @@ treeButton.addEventListener('click', () => {
 });
 
 boulderButton.addEventListener('click', () => {
+
+    boulderG += 1
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -76,5 +90,10 @@ function handleGuess(userGuess, correctSpot) {
     totalEl.textContent = totalGuesses;
     winsEl.textContent = correctGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
+
+    shedGuesses.textContent = shedG
+    boulderGuesses.textContent = boulderG
+    treeGuesses.textContent = treeG
+    
 
 }
