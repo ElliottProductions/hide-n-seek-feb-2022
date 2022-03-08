@@ -106,13 +106,13 @@ function handleGuess(userGuess, correctSpot) {
     winsEl.textContent = correctGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
 
-    shedGuesses.textContent = shedG
-    boulderGuesses.textContent = boulderG
-    treeGuesses.textContent = treeG
+    shedGuesses.textContent = shedG;
+    boulderGuesses.textContent = boulderG;
+    treeGuesses.textContent = treeG;
 
-    shedCorrects.textContent = shedC
-    boulderCorrects.textContent = boulderC
-    treeCorrects.textContent = treeC
+    shedCorrects.textContent = shedC;
+    boulderCorrects.textContent = boulderC;
+    treeCorrects.textContent = treeC;
     
 
 }
