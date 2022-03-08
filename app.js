@@ -15,12 +15,20 @@ const treeGuesses = document.getElementById('tree-guesses');
 const boulderGuesses = document.getElementById('boulder-guesses');
 const shedGuesses = document.getElementById('shed-guesses');
 
+const treeCorrects = document.getElementById('tree-corrects');
+const boulderCorrects = document.getElementById('boulder-corrects');
+const shedCorrects = document.getElementById('shed-corrects');
+
 
 let correctGuesses = 0;
 let totalGuesses = 0;
 let treeG = 0;
 let boulderG = 0;
 let shedG = 0;
+let shedC = 0;
+let boulderC = 0;
+let treeC = 0;
+
 
 
 shedButton.addEventListener('click', () => {
@@ -85,6 +93,13 @@ function handleGuess(userGuess, correctSpot) {
     // then if the user guess is correct, increment the correct guesses
     if(correctSpot === userGuess){
         correctGuesses++
+        if(correctSpot === 'shed'){
+            shedC++
+        }else if(correctSpot === 'tree'){
+            treeC++
+        }else if(correctSpot === 'boulder'){
+            boulderC++
+        }
     }
     // update the DOM to show the new value of wins, losses and total guesses to the user
     totalEl.textContent = totalGuesses;
@@ -94,6 +109,10 @@ function handleGuess(userGuess, correctSpot) {
     shedGuesses.textContent = shedG
     boulderGuesses.textContent = boulderG
     treeGuesses.textContent = treeG
+
+    shedCorrects.textContent = shedC
+    boulderCorrects.textContent = boulderC
+    treeCorrects.textContent = treeC
     
 
 }
