@@ -33,7 +33,7 @@ let treeC = 0;
 
 shedButton.addEventListener('click', () => {
 
-    shedG += 1
+    shedG += 1;
     // get a random item to call the 'correct spot'
  
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -42,7 +42,7 @@ shedButton.addEventListener('click', () => {
 
 treeButton.addEventListener('click', () => {
 
-    treeG += 1
+    treeG += 1;
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -51,7 +51,7 @@ treeButton.addEventListener('click', () => {
 
 boulderButton.addEventListener('click', () => {
 
-    boulderG += 1
+    boulderG += 1;
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -91,14 +91,14 @@ function handleGuess(userGuess, correctSpot) {
     // then add the .face css class to that element so that the face shows up
     correctHidingSpot.classList.add('face');
     // then if the user guess is correct, increment the correct guesses
-    if(correctSpot === userGuess){
-        correctGuesses++
-        if(correctSpot === 'shed'){
-            shedC++
-        }else if(correctSpot === 'tree'){
-            treeC++
-        }else if(correctSpot === 'boulder'){
-            boulderC++
+    if (correctSpot === userGuess){
+        correctGuesses++;
+        if (correctSpot === 'shed'){
+            shedC++;
+        } else if (correctSpot === 'tree'){
+            treeC++;
+        } else if (correctSpot === 'boulder'){
+            boulderC++;
         }
     }
     // update the DOM to show the new value of wins, losses and total guesses to the user
